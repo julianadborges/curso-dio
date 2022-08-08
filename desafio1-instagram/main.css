@@ -1,20 +1,16 @@
-.m1 {
-    border: 2px solid red;
-}
-
-.m2 {
-    border: 2px solid green;
-}
-
-.m3 {
-    border: 2px solid blue;
+body {
+    background-color: #f9f9f9;
 }
 
 .bordacinza {
-    border: 1px solid grey;
+    border: 1px solid rgba(128, 128, 128, 0.356);
 }
 
 .cadastre {
     color: #0B5ED7;
     font-weight: 700;
+}
+
+a.btn {
+    font-weight: 600;
 }
