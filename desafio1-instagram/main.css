@@ -1,9 +1,14 @@
 body {
     background-color: #f9f9f9;
+    min-width: 470px;
 }
 
 .bordacinza {
     border: 1px solid rgba(128, 128, 128, 0.356);
+}
+
+.direita {
+    min-width: 35%;
 }
 
 .cadastre {
@@ -13,4 +18,28 @@ body {
 
 a.btn {
     font-weight: 600;
+}
+
+footer .nav-link {
+    color: grey;
+}
+
+.m1 {
+    border: 2px solid red;
+}
+
+.form-select-sm {
+    border: none;
+    background-color: transparent;
+    color: grey;
+    font-size: 12px;
+}
+
+.form-select-sm:focus {
+    box-shadow: none;
+}
+
+.form-select-sm option {
+    color:grey;
+    background-color: transparent;
 }
