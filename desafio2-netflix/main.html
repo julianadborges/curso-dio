@@ -8,12 +8,13 @@
 <link href="main.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter"/>
 </head>
+
 <body>
 <header>
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-      <div class="container-fluid">
+      <div class="container-fluid px-5">
         <a class="navbar-brand" href="#"><img src="img/netflix-logo.svg" alt="logo da netflix" width="120"></a>
 
         <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
@@ -43,21 +44,27 @@
             </div>
 
             <form class="d-flex my-2 my-lg-0 ">
-                <input class="form-control me-sm-2" type="text" placeholder="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                <input class="form-control me-sm-2 active ps-5 d-none" type="text" placeholder="Search">
+                <button class="btn my-2 my-sm-0" type="submit" id="btnsearch">
+                    <i class="bi bi-search"></i>
+                </button>
             </form>
 
             <ul class="navbar-nav me-auto mt-2 mt-lg-0">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">notif</a>
+                <li class="nav-item dropdown align-self-center" style="font-size: 18px;"> <!-- notificações -->
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="bi bi-bell"></i>
+                    </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownId">
                         <a class="dropdown-item" href="#">Action 1</a>
                         <a class="dropdown-item" href="#">Action 2</a>
                     </div>
                 </li>
 
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Conta</a>
+                <li class="nav-item dropdown"> <!-- conta -->
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="img/perfil-foto.jpg" alt="foto de perfil" width="40" style="border-radius: 5px">
+                    </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownId">
                         <a class="dropdown-item" href="#">Action 1</a>
                         <a class="dropdown-item" href="#">Action 2</a>
