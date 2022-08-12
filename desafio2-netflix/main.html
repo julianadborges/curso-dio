@@ -13,18 +13,49 @@
 
 <body>
 <header>
-<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-      <div class="container-fluid px-5">
-        <a class="navbar-brand" href="#"><img src="img/netflix-logo.svg" alt="logo da netflix" width="120"></a>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <div class="container-fluid px-lg-5 px-3">
+        <a class="navbar-brand" href="#"><img src="img/netflix-logo.svg" alt="logo da netflix" width="120" height="50"></a>
 
-        <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+        <div class="absolute row align-items-center d-md-none">
+        <form class="my-md-0 col">
+            <input class="form-control me-sm-2 active ps-5 d-none" type="text" placeholder="Search">
+            <button class="btn my-lg-2 my-0" type="submit" id="btnsearch">
+                <i class="bi bi-search"></i>
+            </button>
+        </form>
+
+        <ul class="navbar-nav me-auto mt-lg-0 col align-items-center">
+            <li class="nav-item dropdown px-4" style="font-size: 18px;"> <!-- notificações -->
+                <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="bi bi-bell"></i>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownId">
+                    <a class="dropdown-item" href="#">Action 1</a>
+                    <a class="dropdown-item" href="#">Action 2</a>
+                </div>
+            </li>
+
+            <li class="nav-item dropdown"> <!-- conta -->
+                <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img src="img/perfil-foto.jpg" alt="foto de perfil" width="40" style="border-radius: 5px">
+                </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownId">
+                    <a class="dropdown-item" href="#">Action 1</a>
+                    <a class="dropdown-item" href="#">Action 2</a>
+                </div>
+            </li>
+        </ul>
+        </div>
+
+        <button class="navbar-toggler d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
             aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="collapsibleNavId">
             <div class="col">
-                <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+                <ul class="navbar-nav me-auto  mt-lg-0">
                     <li class="nav-item active">
                         <a class="nav-link" href="#">Início</a>
                     </li>
@@ -43,15 +74,15 @@
                 </ul>
             </div>
 
-            <form class="d-flex my-2 my-lg-0 ">
+            <form class="d-md-flex d-none my-md-0 ">
                 <input class="form-control me-sm-2 active ps-5 d-none" type="text" placeholder="Search">
-                <button class="btn my-2 my-sm-0" type="submit" id="btnsearch">
+                <button class="btn my-lg-2 my-0" type="submit" id="btnsearch">
                     <i class="bi bi-search"></i>
                 </button>
             </form>
 
-            <ul class="navbar-nav me-auto mt-2 mt-lg-0">
-                <li class="nav-item dropdown align-self-center" style="font-size: 18px;"> <!-- notificações -->
+            <ul class="navbar-nav me-auto mt-lg-0 d-none d-md-flex">
+                <li class="nav-item dropdown align-self-lg-center" style="font-size: 18px;"> <!-- notificações -->
                     <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="bi bi-bell"></i>
                     </a>
