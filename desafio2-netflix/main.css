@@ -1,5 +1,6 @@
 body {
     font-family: Inter;
+    min-width: 500px;
 }
 
 .m1 {
@@ -16,7 +17,7 @@ body {
 
 .navbar {
     background-color: black;
-    height: 65px;
+    
     font-size: 15px;
     color: white;
 }
@@ -28,6 +29,11 @@ body {
 #btnsearch:hover {
     color: white;
 }
+
+.absolute {
+    position: absolute !important;
+    left: 45%;
+  }
 
 form input  {
     background-color: transparent;
@@ -43,4 +49,10 @@ form input  {
     -webkit-transition: width 400ms ease, background 400ms ease;
     transition:         width 400ms ease, background 400ms ease;
     width: 0px;
+}
+
+@media screen and (max-width: 768px){
+    .navbar-nav {
+        flex-direction: row!important;
+    }
 }
