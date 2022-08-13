@@ -14,18 +14,25 @@
 <body>
 <header>
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-      <div class="container-fluid px-lg-5 px-3">
+      <div class="container-fluid px-md-5 px-3">
         <a class="navbar-brand" href="#"><img src="img/netflix-logo.svg" alt="logo da netflix" width="120" height="50"></a>
 
-        <div class="absolute row align-items-center d-md-none">
-        <form class="my-md-0 col">
-            <input class="form-control me-sm-2 active ps-5 d-none" type="text" placeholder="Search">
-            <button class="btn my-lg-2 my-0" type="submit" id="btnsearch">
-                <i class="bi bi-search"></i>
-            </button>
-        </form>
+        <div class="absolute row align-items-center d-md-none"> <!-- conta, notif e search mobile -->
+            <ul class="navbar-nav me-auto mt-lg-0 col align-items-center">
+            <li class="nav-item dropdown px-4" style="font-size: 18px;"> <!-- notificações -->
+                <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="bi bi-search"></i>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownId">
+                    <form class="my-md-0 col">
+                        <input class="form-control me-sm-2 active ps-5" type="text" placeholder="Search">
+                        <button class="btn my-lg-2 my-0" type="submit" id="btnsearch">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </form>
+                </div>
+            </li>
 
-        <ul class="navbar-nav me-auto mt-lg-0 col align-items-center">
             <li class="nav-item dropdown px-4" style="font-size: 18px;"> <!-- notificações -->
                 <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="bi bi-bell"></i>
@@ -46,7 +53,7 @@
                 </div>
             </li>
         </ul>
-        </div>
+        </div> <!-- conta, notif e search mobile -->
 
         <button class="navbar-toggler d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
             aria-expanded="false" aria-label="Toggle navigation">
@@ -55,17 +62,17 @@
 
         <div class="collapse navbar-collapse" id="collapsibleNavId">
             <div class="col">
-                <ul class="navbar-nav me-auto  mt-lg-0">
+                <ul class="navbar-nav me-auto mt-lg-0">
                     <li class="nav-item active">
                         <a class="nav-link" href="#">Início</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item px-2">
                         <a class="nav-link" href="#">Séries</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Filmes</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item px-2">
                         <a class="nav-link" href="#">Bombando</a>
                     </li>
                     <li class="nav-item">
