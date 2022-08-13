@@ -17,7 +17,6 @@ body {
 
 .navbar {
     background-color: black;
-    
     font-size: 15px;
     color: white;
 }
@@ -30,10 +29,14 @@ body {
     color: white;
 }
 
-.absolute {
+.absolute .dropdown-menu {
     position: absolute !important;
     left: 45%;
-  }
+}
+
+.absolute .dropdown-menu {
+    position: absolute !important;
+}
 
 form input  {
     background-color: transparent;
@@ -54,5 +57,11 @@ form input  {
 @media screen and (max-width: 768px){
     .navbar-nav {
         flex-direction: row!important;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .navbar-brand img {
+        width: auto !important;
     }
 }
