@@ -1,6 +1,6 @@
 body {
     font-family: Inter;
-    min-width: 500px;
+    min-width: 400px;
 }
 
 .m1 {
@@ -19,6 +19,7 @@ body {
     background-color: black;
     font-size: 15px;
     color: white;
+    
 }
 
 .navbar button {
@@ -38,14 +39,18 @@ body {
     position: absolute !important;
 }
 
-form input  {
+#collapsibleNavId {
+    min-width: 770px;
+}
+
+#form-large input .active {
     background-color: transparent;
     background-image: url(https://wp-themes.com/wp-content/themes/twentythirteen/images/search-icon.png);
     background-position: 5px center;
     background-repeat: no-repeat;
     background-size: 24px 24px;
     border: none;
-    height: 40px;
+    /* height: 40px; */
     margin: 3px 0;
     padding: 0 0 0 34px;
     position: relative;
@@ -55,7 +60,7 @@ form input  {
 }
 
 @media screen and (max-width: 768px){
-    .navbar-nav {
+    .absolute ul {
         flex-direction: row!important;
     }
 }
