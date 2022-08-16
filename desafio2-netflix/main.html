@@ -23,10 +23,10 @@
                 <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="bi bi-search"></i>
                 </a>
-                <div class="dropdown-menu" aria-labelledby="dropdownId">
-                    <form class="my-md-0 col">
+                <div class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownId">
+                    <form class="my-md-0 col" id="form-mobile">
                         <input class="form-control me-sm-2 active ps-5" type="text" placeholder="Search">
-                        <button class="btn my-lg-2 my-0" type="submit" id="btnsearch">
+                        <button class="btn my-lg-2 my-0" type="submit" id="btnsearch-mobile">
                             <i class="bi bi-search"></i>
                         </button>
                     </form>
@@ -37,7 +37,7 @@
                 <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="bi bi-bell"></i>
                 </a>
-                <div class="dropdown-menu" aria-labelledby="dropdownId">
+                <div class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownId">
                     <a class="dropdown-item" href="#">Action 1</a>
                     <a class="dropdown-item" href="#">Action 2</a>
                 </div>
@@ -60,19 +60,16 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="collapsibleNavId">
+        <div class="collapse navbar-collapse me-3" id="collapsibleNavId">
             <div class="col">
-                <ul class="navbar-nav me-auto mt-lg-0">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Início</a>
-                    </li>
-                    <li class="nav-item px-2">
+                <ul class="navbar-nav me-auto mt-lg-0 pe-4">
+                    <li class="nav-item px-lg-2">
                         <a class="nav-link" href="#">Séries</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Filmes</a>
                     </li>
-                    <li class="nav-item px-2">
+                    <li class="nav-item px-lg-2">
                         <a class="nav-link" href="#">Bombando</a>
                     </li>
                     <li class="nav-item">
@@ -81,9 +78,9 @@
                 </ul>
             </div>
 
-            <form class="d-md-flex d-none my-md-0 ">
+            <form class="d-md-flex d-none my-md-0" id="form-large">
                 <input class="form-control me-sm-2 active ps-5 d-none" type="text" placeholder="Search">
-                <button class="btn my-lg-2 my-0" type="submit" id="btnsearch">
+                <button class="btn my-lg-2 my-0" type="submit" id="btnsearch-large">
                     <i class="bi bi-search"></i>
                 </button>
             </form>
