@@ -90,7 +90,7 @@ body {
 .titles {
     background: rgb(0,0,0);
     background: linear-gradient(360deg, rgba(0,0,0,0.8253502084427521) 0%, rgba(0,0,0,0.8057423653054971) 43%, rgba(0,0,0,0.648879620207458) 70%, rgba(0,0,0,0.48921575466123945) 88%, rgba(0,0,0,0) 100%); 
-
+    z-index: 1;
 
 }
 
@@ -106,4 +106,19 @@ body {
     font-size: 20px;
     font-weight: bold;
     text-decoration: none;
+}
+
+.segue, .segue a {
+    position: absolute;
+    bottom: 10px;
+    right: 0;
+    z-index: 2;
+    color: #FFFFFF;
+    font-size: 60px;
+}
+
+.show-chevron {
+    background-color: black;
+    background: linear-gradient(360deg, rgba(0,0,0,0.8253502084427521) 0%, rgba(0,0,0,0.8057423653054971) 43%, rgba(0,0,0,0.648879620207458) 70%, rgba(0,0,0,0.48921575466123945) 88%, rgba(0,0,0,0) 100%);
+    transition: 3s;
 }

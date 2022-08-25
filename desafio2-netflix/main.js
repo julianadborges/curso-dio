@@ -6,3 +6,14 @@ $('#btnsearch-large').click(function abrirInput(e) {
     $('#form-large input').toggleClass('active');
     $('#form-large input').toggleClass('d-none');
 })
+
+$('#chevron-title').hover(function () {
+        // over
+        $(this).toggleClass('show-chevron');
+
+
+    }, function () {
+        // out
+        $(this).removeClass('show-chevron');
+    }
+);
