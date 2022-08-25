@@ -9,7 +9,7 @@ $('#btnsearch-large').click(function abrirInput(e) {
 
 $('#chevron-title').hover(function () {
         // over
-        $(this).toggleClass('show-chevron');
+        $(this).addClass('show-chevron');
 
 
     }, function () {
