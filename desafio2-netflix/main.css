@@ -126,7 +126,7 @@ body {
 
 .destaque, #shuffle {
     margin-top: 15vh;
-    font-size: 22px;
+    font-size: 3vh;
     font-weight: 600;
     color: #f9f9f9;
     background-color: rgba(0, 0, 0, 0.473);
@@ -141,3 +141,6 @@ body {
 .botoes a {
     font-weight: 800;
 }
+
+
+
