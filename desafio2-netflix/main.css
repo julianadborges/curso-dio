@@ -130,10 +130,11 @@ body {
     color: #f9f9f9;
     background-color: rgba(0, 0, 0, 0.473);
     box-shadow: rgba(0, 0, 0, 0.767) 0px 5px 12px;
+    border-radius: 1rem;
 }
 
 #info-destaque {
-    background-color: #7a7878d5;
+    background-color: #a7a5a5d5;
 }
 
 .botoes a {
