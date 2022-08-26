@@ -118,18 +118,34 @@
 <main>
 <div class="container-fluid menu-bottom">
 
-    <div class="row mx-4 py-5 px-5 titulo-destaque">
-        <div class="col-12">
-            <img src="/desafio2-netflix/img/RPDR.svg" alt="logo rupaul" width="400">
-        </div>
-        <div class="col-12">
-            <p class="mt-4" id="resumo-destaque">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam at libero nec risus tincidunt luctus. Nulla tempus eu massa sed efficitur. Proin interdum quis velit blandit vulputate. Duis tempus vehicula augue, eget tincidunt lectus. Ut vel sapien ut diam volutpat volutpat. In aliquet lectus eu massa pulvinar, quis hendrerit elit congue.</p>
-        </div>
-        <div class="col-6 mt-4 text-center botoes">
-            <a name="" id="play-destaque" class="btn btn-lg btn-light" href="#" role="button"><i class="bi bi-play px-2"></i> Assistir</a>
-        </div>
-        <div class="col-6 mt-4 botoes">
-            <a name="" id="info-destaque" class="btn btn-lg" href="#" role="button"><i class="bi bi-info-circle pe-2"></i> Mais informações</a>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6 col-10 destaque px-4 py-5"> <!-- card destaque -->
+                <div class="col-12">
+                    <img src="/desafio2-netflix/img/RPDR.svg" alt="logo rupaul" width="400">
+                </div>
+                <div class="col-12">
+                    <p class="mt-4" id="resumo-destaque">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam at libero nec risus tincidunt luctus. Nulla tempus eu massa sed efficitur. Proin interdum quis velit blandit vulputate. Duis tempus vehicula augue, eget tincidunt lectus.</p>
+                </div>
+                <div class="row text-center mt-5">
+                    <div class="col-6 botoes">
+                        <a name="" id="play-destaque" class="btn btn-lg btn-light col-12" href="#" role="button"><i class="bi bi-play px-2"></i> Assistir</a>
+                    </div>
+                    <div class="col-6 botoes">
+                        <a name="" id="info-destaque" class="btn btn-lg col-12" href="#" role="button"><i class="bi bi-info-circle pe-2"></i> Mais informações</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col d-flex align-items-end justify-content-end text-end m1"> <!-- direita -->
+                <div class="row text-end m2">
+                    <button type="button" class="btn px-3" data-bs-toggle="button" aria-pressed="false" autocomplete="off" id="shuffle">
+                        <i class="bi bi-shuffle px-2"></i> Me surpreenda
+                    </button>
+                </div>
+            </div>
+
         </div>
 
     </div>
@@ -149,13 +165,13 @@
         <div class="col">
             <a href="#"><img src="img/title3.png" alt="título 1"></a>
         </div>
-        <div class="col">
+        <div class="col d-none d-lg-block">
             <a href="#"><img src="img/title4.png" alt="título 1"></a>
         </div>
-        <div class="col">
+        <div class="col d-none d-lg-block">
             <a href="#"><img src="img/title5.png" alt="título 1"></a>
         </div>
-        <div class="col">
+        <div class="col d-none d-lg-block">
             <a href="#"><img src="img/title6.png" alt="título 1"></a>
         </div>
 
