@@ -1,0 +1,36 @@
+.m1 {
+    border: 2px solid red;
+}
+
+.m2 {
+    border: 3px solid blue;
+}
+
+.m3 {
+    border: 4px solid green;
+}
+
+body {
+    background-image: url(/imgs/fundo.jpg);
+    background-size: cover;
+    font-family: "Space Mono";
+    width: 100%;
+    height: 100%;
+}
+
+.inicio {
+    background-image: url(/imgs/fundo_game.jpg);
+    border-radius: 2rem;
+    height: 85vh;
+}
+
+.box-inicio {
+    background-color: #f9f9f994;
+    border-radius: 1rem;
+}
+
+#link-inicio {
+    text-decoration: none;
+    color: rgb(163, 55, 13);
+    font-weight: 700;
+}
