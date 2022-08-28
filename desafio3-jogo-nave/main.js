@@ -6,6 +6,9 @@ $('.inicio a').click(function start() {
     $('.foe2').append('<img src="/imgs/inimigo2.png" alt="inimigo" height="60">');
     $('.amigo').append('<img src="/imgs/amigo1.png" alt="amigo" height="60">');
 
+    $('.inicio').css('height', '100vh');
+    $('.inicio').removeClass('mt-5');
+
     asasHeli();
     asasFoe();
     walkAmigo();
@@ -45,9 +48,40 @@ function walkAmigo() {
 }
 
 function moveFundo() {
-    let fundo = 1;
+    let fundo = 0;
     setInterval(() => {
-        $('.inicio').css('background-position-x', `left ${fundo++}`);
-    }, 200)
-    
+        fundo = fundo +0.3;
+        $('.inicio').css('background-position-x', `right -${(fundo)}%`);
+    }, 20)
 }
+
+//mecânica
+var teclas = {
+    W: 87,
+    S: 83,
+    A: 65,
+    D: 68,
+}
+
+$(document).keypress(function (e) {
+    let minTopHeli = 0;
+    let topHeli = parseInt($('.heli').css('top'));
+
+   
+    if( topHeli >= minTopHeli ) {
+        if( e.key === 's') {
+        topHeli = topHeli + 4;
+        $('.heli').css('top', `${topHeli}px`)
+
+        } if ( e.key === 'w') {
+            topHeli = topHeli - 4;
+            $('.heli').css('top', `${topHeli}px`)
+        }
+
+    } else if ( e.key === 's') {
+        topHeli = topHeli + 4;
+        $('.heli').css('top', `${topHeli}px`)
+
+    } else if ()
+    
+})
