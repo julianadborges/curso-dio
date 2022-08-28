@@ -6,9 +6,6 @@ $('.inicio a').click(function start() {
     $('.foe2').append('<img src="/imgs/inimigo2.png" alt="inimigo" height="60">');
     $('.amigo').append('<img src="/imgs/amigo1.png" alt="amigo" height="60">');
 
-    $('.inicio').css('height', '100vh');
-    $('.inicio').removeClass('mt-5');
-
     asasHeli();
     asasFoe();
     walkAmigo();
@@ -63,9 +60,16 @@ var teclas = {
     D: 68,
 }
 
+let windowHeight = $(window).height();
+let windowWidth = $(window).width();
+
 $(document).keypress(function (e) {
-    let minTopHeli = 0;
     let topHeli = parseInt($('.heli').css('top'));
+    let minTopHeli = 0;
+
+    //preciso converter vh to px, então eu posso delimitar quantos px vai ser o mínimo
+    let pxHeliTop = 10 / windowHeight;
+    console.log(pxHeliTop+'px')
 
    
     if( topHeli >= minTopHeli ) {
@@ -82,6 +86,6 @@ $(document).keypress(function (e) {
         topHeli = topHeli + 4;
         $('.heli').css('top', `${topHeli}px`)
 
-    } else if ()
+    }
     
 })
