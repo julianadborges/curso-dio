@@ -9,6 +9,7 @@ $('.inicio a').click(function start() {
     asasHeli();
     asasFoe();
     walkAmigo();
+    moveFundo();
 
 })
 
@@ -31,40 +32,22 @@ function asasFoe() {
 }
 
 function walkAmigo() {
-    let i = 100;
+    let i = 1;
+    setInterval(() => {
+        if(i>=12) {
+            i = 1;
+        } else {
+            i++;
+        }
 
+        $('.amigo').html(`<img src="/imgs/amigo${i}.png" alt="helicóptero" height="60">`)
+    }, 50);
+}
+
+function moveFundo() {
+    let fundo = 1;
     setInterval(() => {
-    $('.amigo').html('<img src="/imgs/amigo2.png" alt="amigo" height="60">')
-}, i*2);
-    i=i;
-    setInterval(() => {
-        $('.amigo').html('<img src="/imgs/amigo3.png" alt="amigo" height="60">')
-}, 200);
-    setInterval(() => {
-        $('.amigo').html('<img src="/imgs/amigo4.png" alt="amigo" height="60">')
-}, 300);
-    setInterval(() => {
-        $('.amigo').html('<img src="/imgs/amigo5.png" alt="amigo" height="60">')
-}, 400);
-setInterval(() => {
-    $('.amigo').html('<img src="/imgs/amigo6.png" alt="amigo" height="60">')
-}, 500);
-setInterval(() => {
-    $('.amigo').html('<img src="/imgs/amigo7.png" alt="amigo" height="60">')
-}, 600);
-setInterval(() => {
-    $('.amigo').html('<img src="/imgs/amigo8.png" alt="amigo" height="60">')
-}, 700);
-setInterval(() => {
-    $('.amigo').html('<img src="/imgs/amigo9.png" alt="amigo" height="60">')
-}, 800);
-setInterval(() => {
-    $('.amigo').html('<img src="/imgs/amigo10.png" alt="amigo" height="60">')
-}, 900);
-setInterval(() => {
-    $('.amigo').html('<img src="/imgs/amigo11.png" alt="amigo" height="60">')
-}, 1000);
-setInterval(() => {
-    $('.amigo').html('<img src="/imgs/amigo12.png" alt="amigo" height="60">')
-}, 1100);
+        $('.inicio').css('background-position-x', `left ${fundo++}`);
+    }, 200)
+    
 }

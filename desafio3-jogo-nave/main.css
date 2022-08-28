@@ -20,6 +20,7 @@ body {
 
 .inicio {
     background-image: url(/imgs/fundo_game.jpg);
+    /* background-position-x: left -5%; */
     border-radius: 2rem;
     height: 85vh;
 }
