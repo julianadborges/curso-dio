@@ -34,3 +34,27 @@ body {
     color: rgb(163, 55, 13);
     font-weight: 700;
 }
+
+.heli {
+    position: absolute;
+    top: 25vh;
+    left: 10vw;
+}
+
+.foe1 {
+    position: absolute;
+    top: 45vh;
+    right: 9vw;
+}
+
+.foe2 {
+    position: absolute;
+    top: 73vh;
+    right: 9vw;
+}
+
+.amigo {
+    position: absolute;
+    top: 73vh;
+    left: 12vw;
+}
