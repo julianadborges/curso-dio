@@ -21,13 +21,16 @@ body {
 .inicio {
     background-image: url(/imgs/fundo_game.jpg);
     background-position-x: right 0%;
+    background-size: cover;
     border-radius: 2rem;
     height: 85vh;
+    max-width: 90vw;
 }
 
 .box-inicio {
     background-color: #f9f9f994;
     border-radius: 1rem;
+    font-size: 24px;
 }
 
 #link-inicio {
@@ -38,24 +41,24 @@ body {
 
 .heli {
     position: absolute;
-    top: 10vh;
-    left: 10vw;
+    top: 8vh;
+    left: 7vw;
 }
 
 .foe1 {
     position: absolute;
     top: 45vh;
-    right: 9vw;
+    right: 6vw;
 }
 
 .foe2 {
     position: absolute;
     top: 73vh;
-    right: 9vw;
+    right: 6vw;
 }
 
 .amigo {
     position: absolute;
     top: 73vh;
-    left: 12vw;
+    left: 7vw;
 }

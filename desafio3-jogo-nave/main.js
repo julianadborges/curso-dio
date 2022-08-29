@@ -1,15 +1,14 @@
 $('.inicio a').click(function start() {
     $('.box-inicio').hide();
-    
     $('.heli').append('<img src="/imgs/apache1.png" alt="helicóptero" height="60">');
     $('.foe1').append('<img src="/imgs/inimigo1-1.png" alt="inimigo" height="60">');
     $('.foe2').append('<img src="/imgs/inimigo2.png" alt="inimigo" height="60">');
     $('.amigo').append('<img src="/imgs/amigo1.png" alt="amigo" height="60">');
-
     asasHeli();
     asasFoe();
     walkAmigo();
     moveFundo();
+    atacaInimigo();
 
 })
 
@@ -39,7 +38,6 @@ function walkAmigo() {
         } else {
             i++;
         }
-
         $('.amigo').html(`<img src="/imgs/amigo${i}.png" alt="helicóptero" height="60">`)
     }, 50);
 }
@@ -53,26 +51,17 @@ function moveFundo() {
 }
 
 //mecânica
-var teclas = {
-    W: 87,
-    S: 83,
-    A: 65,
-    D: 68,
-}
-
 let windowHeight = $(window).height();
 let windowWidth = $(window).width();
 
 $(document).keypress(function (e) {
     let topHeli = parseInt($('.heli').css('top'));
-    let minTopHeli = 0;
-
-    //preciso converter vh to px, então eu posso delimitar quantos px vai ser o mínimo
-    let pxHeliTop = 10 / windowHeight;
-    console.log(pxHeliTop+'px')
-
-   
-    if( topHeli >= minTopHeli ) {
+    let minPxHeliTop = (windowHeight/100)*8;
+    let maxPxHeliTop = (windowHeight/100)*73;
+    
+    //movimentos
+    //se o helicóptero estiver depois do mínimo e antes do máximo, move pra cima e pra baixo
+    if( topHeli >= minPxHeliTop && topHeli <= maxPxHeliTop) {
         if( e.key === 's') {
         topHeli = topHeli + 4;
         $('.heli').css('top', `${topHeli}px`)
@@ -81,11 +70,47 @@ $(document).keypress(function (e) {
             topHeli = topHeli - 4;
             $('.heli').css('top', `${topHeli}px`)
         }
-
-    } else if ( e.key === 's') {
-        topHeli = topHeli + 4;
-        $('.heli').css('top', `${topHeli}px`)
-
+        //se estiver antes do mínimo, move pra baixo
+    } else if (topHeli <= minPxHeliTop) {
+        if ( e.key === 's') {
+            topHeli = topHeli + 4;
+            $('.heli').css('top', `${topHeli}px`)
+        }
+        //se estiver depois do máximo, move pra cima
+    } else if (topHeli >= maxPxHeliTop) {
+        if( e.key === 'w') {
+            topHeli = topHeli - 4;
+            $('.heli').css('top', `${topHeli}px`)
+        }
     }
-    
 })
+
+function atacaInimigo() {
+    let topHeliFoe = parseInt($('.foe1').css('top'));
+    let foe1Right = parseInt($('.foe1').css('right'));
+
+    let minPxFoeTop = (windowHeight/100)*8;
+    let maxPxFoeTop = (windowHeight/100)*73;
+    let minPxFoeRight = (windowWidth/100)*6;
+    let maxPxFoeRight = (windowWidth/100)*69;
+
+    setInterval(() => {
+        let rTop;
+        function randomTop() {
+            rTop = Math.floor(Math.random() * (maxPxFoeTop - minPxFoeTop) + minPxFoeTop)
+        }
+
+        randomTop();
+        $('.foe1').css('top', `${rTop}px`)
+    }, 1700);
+
+    setInterval(() => {
+        function moveRight() {
+            if ( foe1Right < maxPxFoeRight) {
+            foe1Right = foe1Right + 5;
+            $('.foe1').css('right', `${foe1Right}px`)
+            }
+        }
+        moveRight();
+    }, 10)
+}
