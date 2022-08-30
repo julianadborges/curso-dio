@@ -39,7 +39,7 @@ function walkAmigo() {
             i++;
         }
         $('.amigo').html(`<img src="/imgs/amigo${i}.png" alt="helicóptero" height="60">`)
-    }, 50);
+    }, 40);
 }
 
 function moveFundo() {
@@ -86,31 +86,34 @@ $(document).keypress(function (e) {
 })
 
 function atacaInimigo() {
+    let rTop;
+    function randomTop() {
+        rTop = Math.floor(Math.random() * (maxPxFoeTop - minPxFoeTop) + minPxFoeTop)
+    }
+
     let topHeliFoe = parseInt($('.foe1').css('top'));
     let foe1Right = parseInt($('.foe1').css('right'));
 
     let minPxFoeTop = (windowHeight/100)*8;
     let maxPxFoeTop = (windowHeight/100)*73;
     let minPxFoeRight = (windowWidth/100)*6;
-    let maxPxFoeRight = (windowWidth/100)*69;
+    let maxPxFoeRight = (windowWidth/100)*77;
 
+    let velox = 0.4;
+
+// se o foe1Right (posição da direita) do inimigo estiver abaixo do max direita, faz ele andar pra esquerda
+// se o foe1Right (posição da direita) do inimigo estiver dpois do max direita, faz ele voltar pro mínimo direita (minPxFoeRight)
     setInterval(() => {
-        let rTop;
-        function randomTop() {
-            rTop = Math.floor(Math.random() * (maxPxFoeTop - minPxFoeTop) + minPxFoeTop)
-        }
-
-        randomTop();
-        $('.foe1').css('top', `${rTop}px`)
-    }, 1700);
-
-    setInterval(() => {
-        function moveRight() {
-            if ( foe1Right < maxPxFoeRight) {
+        if (foe1Right <= maxPxFoeRight ) {
             foe1Right = foe1Right + 5;
             $('.foe1').css('right', `${foe1Right}px`)
-            }
+        } else if (foe1Right >= maxPxFoeRight) {
+            foe1Right = minPxFoeRight;
+            $('.foe1').css('right', `${foe1Right}px`)
+            randomTop();
+            topHeliFoe = rTop;
+            $('.foe1').css('top', `${rTop}px`)
+            //aumentar velocidade
         }
-        moveRight();
-    }, 10)
+    }, velox);
 }
