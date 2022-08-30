@@ -83,6 +83,30 @@ $(document).keypress(function (e) {
             $('.heli').css('top', `${topHeli}px`)
         }
     }
+
+
+    /////////////////////////////tiro
+    let tiroLeft = parseInt($('.tiro').css('left'));
+    let tiroTop = parseInt($('.tiro').css('top'));
+
+    let minPxTiroLeft = (windowWidth/100)*21;
+    let maxPxTiroLeft = (windowWidth/100)*73;
+
+    if ( e.key === ' ') {
+        $('.tiro').html('<img src="imgs/disparo.png" alt="disparo"></img>')
+
+        if (tiroLeft === minPxTiroLeft ) {
+            setInterval(() => {
+                tiroLeft += 5;
+                $('.tiro').css('left', `${tiroLeft}px`)
+                
+            }, 10);
+        } else if ( tiroLeft >= maxPxTiroLeft ) {
+            tiroLeft = minPxTiroLeft;
+            $('.tiro').css('left', `${tiroLeft}px`)
+        }
+
+    } ///////////////////tiro
 })
 
 function atacaInimigo() {
@@ -99,7 +123,7 @@ function atacaInimigo() {
     let minPxFoeRight = (windowWidth/100)*6;
     let maxPxFoeRight = (windowWidth/100)*77;
 
-    let velox = 0.4;
+    let velox = 10;
 
 // se o foe1Right (posição da direita) do inimigo estiver abaixo do max direita, faz ele andar pra esquerda
 // se o foe1Right (posição da direita) do inimigo estiver dpois do max direita, faz ele voltar pro mínimo direita (minPxFoeRight)
@@ -113,7 +137,8 @@ function atacaInimigo() {
             randomTop();
             topHeliFoe = rTop;
             $('.foe1').css('top', `${rTop}px`)
-            //aumentar velocidade
+            //aumentar velocidade - não tá funcionando
+            // velox += 200;
         }
     }, velox);
 }

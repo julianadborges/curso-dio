@@ -62,3 +62,9 @@ body {
     top: 73vh;
     left: 7vw;
 }
+
+.tiro {
+    position: absolute;
+    left: 21vw;
+    top: 12vh;
+}
