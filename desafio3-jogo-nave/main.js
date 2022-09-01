@@ -198,30 +198,7 @@ function moveCaminhao() {
 
 function checkColisao() {
 
-    let posicaoCheckAmigo = parseInt($('.check-colisao-left-bottom').css('right'));
 
-    setInterval(() => {
-    //     function checkBottom() {
-    //         if ( amigoLeft === posicaoCheckAmigo ) {
-    //             console.log('bateu')
-    //         } else if ( amigoLeft != posicaoCheckAmigo ) {
-    //             console.log('não bateu')
-    //         }
-
-    // }
-
-    //  checkBottom();
-
-    function checkBottom() {
-        console.log(`posicaoCheckAmigo = ${posicaoCheckAmigo}, amigoLeft = ${amigoLeft}`)
-    }
-
-    checkBottom();
-
-
-
-
-    }, 10);
 
 
 }
