@@ -30,7 +30,7 @@ body {
 .box-inicio {
     background-color: #f9f9f994;
     border-radius: 1rem;
-    font-size: 24px;
+    font-size: 3vh;
 }
 
 #link-inicio {
@@ -51,7 +51,7 @@ body {
     right: 6vw;
 }
 
-.foe2 {
+.caminhao {
     position: absolute;
     top: 73vh;
     right: 6vw;
@@ -65,6 +65,55 @@ body {
 
 .tiro {
     position: absolute;
-    left: 21vw;
+    left: 20vw;
     top: 12vh;
+}
+
+.check-colisao-left {
+    position: inherit;
+    top: 0;
+    right: 0;
+
+    background-color: red;
+    width: 5px;
+    height: 60px;
+}
+
+.check-colisao-left-bottom {
+    position: inherit;
+    top: 0;
+    right: 0;
+
+    background-color: red;
+    width: 5px;
+    height: 60px;
+}
+
+.check-colisao-right {
+    position: inherit;
+    top: 0;
+    right: 100;
+
+    background-color: red;
+    width: 5px;
+    height: 60px;
+}
+
+.check-colisao-right-bottom {
+    position: inherit;
+    top: 0;
+    left: 0;
+
+    background-color: red;
+    width: 5px;
+    height: 60px;
+}
+
+#check-colisao-tiro {
+    position: inherit;
+
+
+    background-color: red;
+    width: 5px;
+    height: 60px;
 }
