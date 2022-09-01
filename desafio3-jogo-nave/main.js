@@ -201,9 +201,21 @@ function moveCaminhao() {
 //check colisao teste
 function checkColisao() {
     
-    setInterval(() => {
+    setInterval(function checkColisaoBottom() {
         let PxLeftAmigo = $('#colisao-amigo').parent().position().left;
-        console.log(PxLeftAmigo)
+        let PxLeftCaminhao = $('#colisao-caminhao').parent().position().left;
+
+        let amigoRangeMax = PxLeftAmigo + 50;
+        let amigoRangeMin = PxLeftAmigo - 50;
+        let caminhaoRangeMin = PxLeftCaminhao - 50;
+        let caminhaoRangeMax = PxLeftCaminhao + 50;
+
+        if (PxLeftAmigo >= caminhaoRangeMin) {
+            console.log('bateu')
+        } else {
+            console.log('ainda não bateu')
+        }
+
     }, 10);
 
 
