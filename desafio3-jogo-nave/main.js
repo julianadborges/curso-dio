@@ -1,8 +1,12 @@
+$(document).ready(function () {
+    $('.check-colisao').hide();
+});
+
 $('.inicio a').click(function start() {
     $('.box-inicio').hide();
     $('.heli').prepend('<img src="/imgs/apache1.png" alt="helicóptero" height="60">');
     $('.foe1').prepend('<img src="/imgs/inimigo1-1.png" alt="inimigo" height="60">');
-    $('.caminhao').prepend('<div class="check-colisao-right-bottom"></div><img src="/imgs/inimigo2.png" alt="caminhão" height="60">');
+    $('.caminhao').prepend('<div class="check-colisao check-colisao-right-bottom"></div><img src="/imgs/inimigo2.png" alt="caminhão" height="60">');
     $('.amigo').prepend('<img src="/imgs/amigo1.png" alt="amigo" height="60">');
     asasHeli();
     asasFoe();
@@ -20,10 +24,10 @@ function asasHeli() {
     setInterval(() => {
         if( i >= 2) {
             i=1;
-            $('.heli').html(`<div class="check-colisao-left"></div><img src="/imgs/apache${i}.png" alt="helicóptero" height="60">`)
+            $('.heli').html(`<div class="check-colisao check-colisao-left"></div><img src="/imgs/apache${i}.png" alt="helicóptero" height="60">`)
         } else {
             i++;
-            $('.heli').html(`<div class="check-colisao-left"></div><img src="/imgs/apache${i}.png" alt="helicóptero" height="60">`)
+            $('.heli').html(`<div class="check-colisao check-colisao-left"></div><img src="/imgs/apache${i}.png" alt="helicóptero" height="60">`)
         }
     }, 100);
 }
@@ -33,10 +37,10 @@ function asasFoe() {
     setInterval(() => {
         if( i >= 2) {
             i=1;
-            $('.foe1').html(`<div class="check-colisao-right"></div><img src="/imgs/inimigo1-${i}.png" alt="inimigo" height="60">`)
+            $('.foe1').html(`<div class="check-colisao check-colisao-right"></div><img src="/imgs/inimigo1-${i}.png" alt="inimigo" height="60">`)
         } else {
             i++;
-            $('.foe1').html(`<div class="check-colisao-right"></div><img src="/imgs/inimigo1-${i}.png" alt="inimigo" height="60">`)
+            $('.foe1').html(`<div class="check-colisao check-colisao-right"></div><img src="/imgs/inimigo1-${i}.png" alt="inimigo" height="60">`)
         }
     }, 100);
 }
@@ -49,7 +53,7 @@ function walkAmigo() {
         } else {
             i++;
         }
-        $('.amigo').html(`<div class="check-colisao-left-bottom"></div><img src="/imgs/amigo${i}.png" alt="amigo" height="60">`)
+        $('.amigo').html(`<div class="check-colisao check-colisao-left-bottom" id="colisao-amigo"></div><img src="/imgs/amigo${i}.png" alt="amigo" height="60">`)
     }, 50);
 }
 
@@ -119,7 +123,7 @@ $(document).keypress(function (e) {
 
     /////////////////////////////tiro
     if ( e.key === ' ') {
-        $('.tiro').html('<div class="check-colisao-left"></div><img src="imgs/disparo.png" alt="disparo"></img>')
+        $('.tiro').html('<div class="check-colisao check-colisao-left"></div><img src="imgs/disparo.png" alt="disparo"></img>')
         $('.tiro').css('top', `${topHeli+26}px`)
 
         let interval = setInterval(() => {
@@ -195,9 +199,15 @@ function moveCaminhao() {
 
 
 //check colisao teste
-
 function checkColisao() {
+    
+    setInterval(() => {
+        let PxLeftAmigo = $('#colisao-amigo').parent().position().left;
+        console.log(PxLeftAmigo)
+    }, 10);
 
+
+    
 
 
 
