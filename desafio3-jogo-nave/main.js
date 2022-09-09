@@ -207,13 +207,21 @@ function checkColisao() {
 
         let amigoRangeMax = PxLeftAmigo + 50;
         let amigoRangeMin = PxLeftAmigo - 50;
-        let caminhaoRangeMin = PxLeftCaminhao - 50;
-        let caminhaoRangeMax = PxLeftCaminhao + 50;
+        let caminhaoRangeMin = PxLeftCaminhao;
+        let caminhaoRangeMax = PxLeftCaminhao;
 
         if (PxLeftAmigo >= caminhaoRangeMin) {
-            console.log('bateu')
+            amigoLeft = minPxAmigoLeft;
+            $('.amigo').css('left', `${amigoLeft}px`);
+            caminhaoRight = minPxCaminhaoRight;
+            $('.caminhao').css('right', `${caminhaoRight}px`);
+            setTimeout(() => {
+                moveAmigo();
+                moveCaminhao();
+            }, 0);
+
         } else {
-            console.log('ainda não bateu')
+            
         }
 
     }, 10);

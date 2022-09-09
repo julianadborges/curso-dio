@@ -1,0 +1,30 @@
+.m1 {
+    border: 2px solid red;
+}
+
+.m2 {
+    border: 2px solid blue;
+}
+
+.m3 {
+    border: 2px solid green;
+}
+
+.square {
+    background-color: rgb(183, 197, 197);
+    border-radius: 1rem;
+    
+}
+
+.square button {
+    font-size: 35px!important;
+}
+
+.start {
+    border-radius: 1rem;
+}
+
+.start:disabled {
+    background-color: rgb(182, 181, 181);
+    border: none;
+}
