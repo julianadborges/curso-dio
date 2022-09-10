@@ -20,11 +20,15 @@
     font-size: 35px!important;
 }
 
-.start {
+.start, .restart {
     border-radius: 1rem;
 }
 
-.start:disabled {
+.start:disabled, .restart:disabled {
     background-color: rgb(182, 181, 181);
     border: none;
+}
+
+.vencedor {
+    color: red;
 }
