@@ -11,14 +11,13 @@ let casas = ['A1', 'A2', 'A3', 'B1', 'B2', 'B3', 'C1', 'C2', 'C3'];
 
 let jogandoVar = false;
 let ganhou = false;
+let winner;
 ///////////////
 setInterval(function checaBtn() {
-    //antes de começar
     if ( jogandoVar === false ) {
         $start.attr('disabled', false)
         $restart.attr('disabled', true)
         $('.square button').attr('disabled', true)
-    //se alguém ganhou
     } else if (ganhou === false) {
         $start.attr('disabled', true)
         $restart.attr('disabled', false)
@@ -35,7 +34,7 @@ $restart.click(() => {
 })
 
 ///////////JOGADAS
-setInterval(function checaJogadas() {
+let interval = setInterval(function checaJogadas() {
     let A1 = $("button[id*='A1']").html();
     let A2 = $("button[id*='A2']").html();
     let A3 = $("button[id*='A3']").html();
@@ -46,44 +45,68 @@ setInterval(function checaJogadas() {
     let C2 = $("button[id*='C2']").html();
     let C3 = $("button[id*='C3']").html();
     
-    
-        if ( A1 !== '' && A1 === B1 && B1 === C1 ) {
-            $('.vencedor').removeClass('d-none')
-            $('.winner').html(A1)
-            ganhou = true
-        } else if ( A2 !== '' && A2 === B2 && B2 === C2) {
-            $('.vencedor').removeClass('d-none')
-            $('.winner').html(A2)
-            ganhou = true
-        } else if ( A3 !== '' && A3 === B3 && B3 === C3) {
-            $('.vencedor').removeClass('d-none')
-            $('.winner').html(A3)
-            ganhou = true
-        } else if ( A1 !== '' && A1 === A2 && A2 === A3) {
-            $('.vencedor').removeClass('d-none')
-            $('.winner').html(A1)
-            ganhou = true
-        } else if ( B1 !== '' && B1 === B2 && B2 === B3) {
-            $('.vencedor').removeClass('d-none')
-            $('.winner').html(B1)
-            ganhou = true
-        } else if ( C1 !== '' && C1 === C2 && C2 === C3) {
-            $('.vencedor').removeClass('d-none')
-            $('.winner').html(C1)
-            ganhou = true
-        } else if ( A1 !== '' && A1 === B2 && B2 === C3) {
-            $('.vencedor').removeClass('d-none')
-            $('.winner').html(A1)
-            ganhou = true
-        } else if ( A3 !== '' && A3 === B2 && B2 === C1) {
-            $('.vencedor').removeClass('d-none')
-            $('.winner').html(A3)
-            ganhou = true
-        }
-
-    
+    if ( A1 !== '' && A1 === B1 && B1 === C1 ) {
+        $('.vencedor').removeClass('d-none')
+        winner = A1
+        ganhou = true
+        switchGanhador();
+        return false;
+    } else if ( A2 !== '' && A2 === B2 && B2 === C2) {
+        $('.vencedor').removeClass('d-none')
+        winner = A2
+        ganhou = true;
+        switchGanhador();
+        return false;
+    } else if ( A3 !== '' && A3 === B3 && B3 === C3) {
+        $('.vencedor').removeClass('d-none')
+        winner = A3
+        ganhou = true;
+        switchGanhador();
+        return false;
+    } else if ( A1 !== '' && A1 === A2 && A2 === A3) {
+        $('.vencedor').removeClass('d-none')
+        winner = A1
+        ganhou = true;
+        switchGanhador();
+        return false;
+    } else if ( B1 !== '' && B1 === B2 && B2 === B3) {
+        $('.vencedor').removeClass('d-none')
+        winner = B1
+        ganhou = true;
+        switchGanhador();
+        return false;
+    } else if ( C1 !== '' && C1 === C2 && C2 === C3) {
+        $('.vencedor').removeClass('d-none')
+        winner = C1
+        ganhou = true;
+        switchGanhador();
+        return false;
+    } else if ( A1 !== '' && A1 === B2 && B2 === C3) {
+        $('.vencedor').removeClass('d-none')
+        winner = A1
+        ganhou = true;
+        switchGanhador();
+        return false;
+    } else if ( A3 !== '' && A3 === B2 && B2 === C1) {
+        $('.vencedor').removeClass('d-none')
+        winner = A3
+        ganhou = true;
+        switchGanhador();
+        return false;
+    }
 }, 0)
 
+function switchGanhador() {
+    if (player === winner) {
+        clearInterval(interval)
+        $('.vencedor img').attr('src', 'giphy.gif')
+        $('.winner').html('VOCÊ!')
+    } else {
+        clearInterval(interval)
+        $('.vencedor img').attr('src', 'giphy2.gif')
+        $('.winner').html('A máquina');
+    }
+}
 
 /////////////////
 $start.click(function escolheJogador() {
@@ -119,9 +142,9 @@ $square.click(function joga() {
         }
 
    /////////////////
-        if(ganhou === true) {
-            return false;
-        } else if (ganhou === false) {
+        if(ganhou === false) {
+            console.log(ganhou)
+
             setTimeout(function jogaAI() {
                 let casaAI;
                 let casaAIConvert;
@@ -174,11 +197,8 @@ $square.click(function joga() {
                 }, 300);
             
             }
+        } else if (ganhou === true) {
+            console.log(ganhou)
+            return false
     }
-}) //FUNCTION JOGA
-
-
-
-
-
-/////////////////
+})
