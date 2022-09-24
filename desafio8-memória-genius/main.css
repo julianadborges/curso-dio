@@ -1,0 +1,75 @@
+.m1 {
+    border: 2px solid red;
+}
+
+.m2 {
+    border: 2px solid blue;
+}
+
+body {
+    font-family: "Lato";
+    background-color: rgb(175, 207, 207);
+}
+
+main {
+    width: 100vw;
+    height: 100vh;
+}
+
+.container {
+    position: relative;
+}
+
+#blue {
+    background-color: rgb(74, 74, 223);
+    border-radius: 100% 0 0 0;
+    
+}
+
+#red {
+    background-color: rgb(231, 56, 56);
+    border-radius: 0 0 0 100%;
+}
+
+#green {
+    background-color: rgb(45, 175, 45);
+    border-radius: 0 100% 0 0;
+}
+
+#yellow {
+    background-color: rgb(245, 245, 36);
+    border-radius: 0 0 100% 0;
+}
+
+.cor {
+    box-shadow: rgba(14, 30, 37, 0.12) 8px 8px 8px 8px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    cursor: pointer;
+}
+
+.active {
+    box-shadow: rgba(255, 255, 255, 0.438) 0px 30px 60px -12px inset, rgba(255, 255, 255, 0.568) 0px 18px 36px -18px inset;  
+}
+
+#start {
+    position: absolute;
+    left: 43%;
+    top: 37%;
+    background-color: rgb(175, 207, 207);
+    border-radius: 100%;
+    border-width: 3px;
+}
+
+#start:hover {
+    background-color: black;
+    transition: 0.7s;
+}
+
+.score {
+    position: fixed;
+    top: 10vh;
+    left: 2vw;
+    width: 15vw;
+    background-color: black;
+    color: whitesmoke;
+    border-radius: 1rem;
+}

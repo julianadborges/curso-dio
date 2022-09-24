@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Simon</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Jodecir Neto">
+    <link rel="icon" href="icon/favicon.ico">
+    <link rel="stylesheet" href="main.css">
+    <script src="main.js" defer></script> 
+		<script src="https://kit.fontawesome.com/a076d05399.js" defer></script>
+  </head>
+
+  <body>
+    <div id="btn-container">
+      <button id="startBtn" onclick="playGame()">Start</button>
+    </div>
+    <div class="game-container"> 
+      <div class="simon">  
+        <div class="green"></div>
+        <div class="red"></div>
+        <div class="yellow"></div>
+        <div class="blue"></div>
+      </div>
+    </div>
+    <div class="hud">
+			<div class="group">
+        <p class="scoreboard">Score: <span id="score">0</span>
+				<div class="dark-checkbox">
+					<input type="checkbox" class="checkbox" id="chk"/>
+					<label class="label" for="chk">
+						<i class="fa fa-moon"></i>
+						<i class="fa fa-sun"></i>
+						<div class="ball"></div>
+					</label>
+				</div>
+			</div>
+    </div>
+		<!-- <audio src="sound/Conga-WoodDrum.wav" preload="auto" id="greenBtn"></audio>
+		<audio src="sound/Metal-Can.wav" preload="auto" id="redBtn"></audio>
+    <audio src="sound/8-bit_C.mp3" preload="auto" id="yellowBtn"></audio>
+		<audio src="sound/Kalimba_C.wav" preload="auto" id="blueBtn"></audio> -->
+  </body>
+</html>
