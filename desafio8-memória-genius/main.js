@@ -73,14 +73,15 @@ function destaca(cor) {
         cor = yellow
     }
 
-    setTimeout(() => {
-        cor.addClass('selected')    
-    }, 200);
-    
-    setTimeout(() => {
-        cor.removeClass('selected')    
-    }, 1000);
-
+    ordem.forEach(element => {
+        setTimeout(() => {
+            cor.addClass('selected')    
+        }, 200);
+        
+        setTimeout(() => {
+            cor.removeClass('selected')    
+        }, 1000);
+    });
 }
 
 ////checa se clicado é igual à ordem
@@ -88,6 +89,7 @@ function checaJogada() {
     let a = ordem.toString()
     let b = clicado.toString()
     if (a===b) {
+        console.log(`ordem: ${ordem}, clicado: ${clicado}`)
         console.log('ok')
         nextLevel()
     } else {
@@ -97,5 +99,18 @@ function checaJogada() {
 
 //segue o jogo se acertou
 function nextLevel() {
-    randomCor()
+    console.log('chamou next level')
+    clicado = [];
+
+    setTimeout(() => {
+        randomCor()
+
+        ordem.push(cor)
+        qtMaxClicado = ordem.length; 
+
+        destaca(cor)
+
+        console.log(ordem)
+    }, 500);
+
 }
