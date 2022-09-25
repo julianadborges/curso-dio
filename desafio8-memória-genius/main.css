@@ -20,27 +20,33 @@ body {
 #blue {
     background-color: rgb(74, 74, 223);
     border-radius: 100% 0 0 0;
-    
+    border: 3px solid black;
+
 }
 
 #red {
     background-color: rgb(231, 56, 56);
     border-radius: 0 0 0 100%;
+    border-bottom: 3px solid black;
+    border-left: 3px solid black;
 }
 
 #green {
     background-color: rgb(45, 175, 45);
     border-radius: 0 100% 0 0;
+    border-top: 3px solid black;
+    border-right: 3px solid black;
 }
 
 #yellow {
     background-color: rgb(245, 245, 36);
     border-radius: 0 0 100% 0;
+    border: 3px solid black;
 }
 
 .cor {
-    box-shadow: rgba(14, 30, 37, 0.12) 8px 8px 8px 8px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-    cursor: pointer;
+    box-shadow: rgba(14, 30, 37, 0.253) 8px 8px 8px 8px, rgba(14, 30, 37, 0.473) 0px 2px 16px 0px;
+    cursor: pointer!important;
 }
 
 .active {
