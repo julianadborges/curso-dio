@@ -1,96 +1,68 @@
-let cores = ['blue', 'green', 'red', 'yellow']
-let ordem = [];
-let clicado = [];
-let score = 0;
-
-let qt = 0;
-
-let cor;
-
-const $btn = $('button');
-
-/////////classes/cores
+const $btn = $('#start');
 const blue = $('#blue');
 const green = $('#green');
 const red = $('#red');
 const yellow = $('#yellow');
 
-//score na pag
-$('#score').html(score);
+let ordem = [];
+let clicado = [];
+let cor;
 
-    ///////push clicado
-    $('.cor').click(function push() {
-        let id = $(this).closest('.cor').attr('id')
-        console.log(id)
-    })
+$score = $('#score');
+let score = 0;
 
+/////ready
+$score.html(score);
 
-$btn.click(function play() {
-    ///////random cor
-    function randomCor(){
-        cor = Math.floor(Math.random()*cores.length);
-        qt++
-        switch (cor) {
-            case 0:
-                cor = 'blue' 
+//////random ordem
+function randomCor() {
+    cor = Math.floor(Math.random() * 4)
+
+    switch (cor) {
+        case 0:
+            cor = 'blue'
             break;
-            case 1:
-                cor = 'green' 
+        case 1:
+            cor = 'green'
             break;
-            case 2:
-                cor = 'red' 
+        case 2:
+            cor = 'red'
             break;
-            case 3:
-                cor = 'yellow' 
+        case 3:
+            cor = 'yellow'
             break;
-        }
     }
-    ///////random cor
+}
 
-    ///////joga a cor sorteada pra array de cores
-    let interval = setInterval(function corToArray() {
-        let qtMax = ordem.length+1;
+////PLAY
+$btn.click(() => {
+    $btn.attr('disabled', true)
+    randomCor()
+    ordem.push(cor)
+    destaca(cor)
+});
 
-            randomCor()
-            ordem.push(cor)
-            console.log(ordem)
-
-    });
-
-
-
-    //////checa jogada
-    function checa() {
-        
-    }
-
-
-
-    ///////joga a cor sorteada pra array de cores
-
-    ///////destaca a cor random
-    function destaca() {
-        let interval = 1600;
-
-
-        // ordem.forEach(function(el) {
-        //     var run = setTimeout(function() {
-        //         setInterval(() => {
-        //             $(`[id*='${el}']`).toggleClass('active');
-        //         }, 1500);
-
-        //         clearTimeout(run);
-
-        //     }, interval);
-          
-
-        //   });
-
+//destaca a cor sorteada
+function destaca(cor) {
+    if (cor === 'blue') {
+        cor = blue
+    } else if (cor === 'green') {
+        cor = green
+    } else if (cor === 'red') {
+        cor = red
+    } else if (cor === 'yellow') {
+        cor = yellow
     }
 
-    destaca();
-    ///////destaca a cor random
+    setTimeout(() => {
+        $(cor).addClass('selected')    
+    }, 1600);
+    
+    setTimeout(() => {
+        $(cor).removeClass('selected')    
+    }, 1600);
+
+}
 
 
 
-})

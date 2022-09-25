@@ -15,6 +15,7 @@ body {
 .jogo {
     position: relative;
     margin-top: 10vh!important;
+    z-index: 100!important;
 }
 
 #blue {
@@ -63,7 +64,7 @@ body {
     background-color: rgb(175, 207, 207);
     border-radius: 100%;
     border-width: 3px;
-    
+
 }
 
 #start:hover {
