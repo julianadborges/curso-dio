@@ -15,7 +15,7 @@ body {
 .jogo {
     position: relative;
     margin-top: 10vh!important;
-    z-index: 100!important;
+    z-index: 2!important;
 }
 
 #blue {
@@ -48,6 +48,7 @@ body {
 .cor {
     box-shadow: rgba(14, 30, 37, 0.253) 8px 8px 8px 8px, rgba(14, 30, 37, 0.473) 0px 2px 16px 0px;
     cursor: pointer!important;
+    z-index: 2;
 }
 
 .active {
@@ -58,18 +59,23 @@ body {
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 0;
 }
 
 #start {
     background-color: rgb(175, 207, 207);
     border-radius: 100%;
     border-width: 3px;
-
+    z-index: 1;
 }
 
 #start:hover {
     background-color: black;
     transition: 0.7s;
+}
+
+#start:disabled {
+    display: none;
 }
 
 .score {
@@ -80,4 +86,14 @@ body {
     background-color: black;
     color: whitesmoke;
     border-radius: 1rem;
+}
+
+.selected {
+    background-color: rgb(225, 224, 224)!important;
+}
+
+.teste {
+    position: absolute;
+    top: 0;
+    right: 0;
 }
