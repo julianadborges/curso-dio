@@ -11,13 +11,10 @@ body {
     background-color: rgb(175, 207, 207);
 }
 
-main {
-    width: 100vw;
-    height: 100vh;
-}
 
-.container {
+.jogo {
     position: relative;
+    margin-top: 10vh!important;
 }
 
 #blue {
@@ -50,10 +47,13 @@ main {
     box-shadow: rgba(255, 255, 255, 0.438) 0px 30px 60px -12px inset, rgba(255, 255, 255, 0.568) 0px 18px 36px -18px inset;  
 }
 
-#start {
+.start {
     position: absolute;
-    left: 43%;
-    top: 37%;
+    top: 0;
+    left: 0;
+}
+
+#start {
     background-color: rgb(175, 207, 207);
     border-radius: 100%;
     border-width: 3px;
