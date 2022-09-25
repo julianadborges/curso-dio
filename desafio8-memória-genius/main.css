@@ -50,13 +50,18 @@ main {
     box-shadow: rgba(255, 255, 255, 0.438) 0px 30px 60px -12px inset, rgba(255, 255, 255, 0.568) 0px 18px 36px -18px inset;  
 }
 
-#start {
+.start {
     position: absolute;
-    left: 43%;
-    top: 37%;
+    top: 0;
+    left: 0;
+    vertical-align: middle;
+}
+
+#start {
     background-color: rgb(175, 207, 207);
     border-radius: 100%;
     border-width: 3px;
+    
 }
 
 #start:hover {

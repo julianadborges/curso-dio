@@ -1,42 +1,44 @@
 <!doctype html>
 <html lang="pt-br">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Jogo Genius</title>
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-		<link href="main.css" rel="stylesheet">
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-		<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato"/>
-		
-	</head>
-	<body>
-		<main>
-			<div class="container my-4 mt-5">
-					<div class="row mx-auto" style="height: 40vh; width: 50vw;">
-							<div class="col cor" id="blue" onclick="push()"></div>
-							<div class="col cor" id="green" onclick="push()"></div>
-					</div>
-					<div class="mx-auto">
-						<button class="btn btn-outline-dark py-5 px-5" id="start">Começar</button>
-					</div>
-					<div class="row mx-auto" style="height: 40vh; width: 50vw;">
-							<div class="col cor" id="red" onclick="push()"></div>
-							<div class="col cor" id="yellow" onclick="push()"></div>
-					</div>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jogo Genius</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link href="main.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato"/>
+</head>
+
+<body>
+	<main>
+		<div class="container jogo my-4 mt-5">
+			<div class="row mx-auto" style="height: 40vh; width: 50vw;">
+				<div class="col cor" id="blue"></div>
+				<div class="col cor" id="green"></div>
 			</div>
-		</main>
-
-		<section>
-			<div class="container score pt-3">
-				<h5 class="text-center">Score</h6>
-					<p class="text-center"><span id="score"></p>
+			<div class="row mx-auto" style="height: 40vh; width: 50vw;">
+				<div class="col cor" id="red"></div>
+				<div class="col cor" id="yellow"></div>
 			</div>
-		</section>
+		</div>
+	</main>
+
+		<div class="start m1 w-100 h-100 center text-center">
+			<button class="btn btn-outline-dark py-5 px-5" id="start">Começar</button>
+		</div>
+
+	<section>
+		<div class="row score">
+			<h5 class="text-center">Score</h6>
+			<p class="text-center"><span id="score"></p>
+		</div>
+	</section>
 
 
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-		<script src="main.js" async defer></script>
-	</body>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+	<script src="main.js" async defer></script>
+</body>
 </html>

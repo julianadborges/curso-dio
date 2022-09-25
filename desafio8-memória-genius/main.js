@@ -19,11 +19,10 @@ const yellow = $('#yellow');
 $('#score').html(score);
 
     ///////push clicado
-    function push(x) {
-        console.log($(x).attr('id'))
-        // clicado.push(this.id);
-        // console.log(clicado);
-    }
+    $('.cor').click(function push() {
+        let id = $(this).closest('.cor').attr('id')
+        console.log(id)
+    })
 
 
 $btn.click(function play() {
