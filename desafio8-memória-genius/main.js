@@ -33,6 +33,8 @@ function randomCor() {
             cor = 'yellow'
             break;
     }
+
+    qtMaxClicado = ordem.length;
 }
 
 ////PLAY
@@ -62,27 +64,33 @@ $cor.click(function pegaiD() {
 }) 
 
 //destaca a cor sorteada
-function destaca(cor) {
-    if (cor === 'blue') {
+function destaca(cor, element) {
+    if (cor === 'blue' || element === 'blue') {
         cor = blue
-    } else if (cor === 'green') {
+    } else if (cor === 'green' || element === 'green') {
         cor = green
-    } else if (cor === 'red') {
+    } else if (cor === 'red' || element === 'red') {
         cor = red
-    } else if (cor === 'yellow') {
+    } else if (cor === 'yellow' || element === 'yellow') {
         cor = yellow
     }
 
-    ordem.forEach(element => {
+    //preciso pegar cada elemento da array ordem
+    //pra cada um tenho que chamar dois timeouts
+
+    $.each(ordem, function (index, cor) { 
         setTimeout(() => {
-            cor.addClass('selected')    
+            $(`#${cor}`).addClass('selected')    
         }, 200);
         
         setTimeout(() => {
-            cor.removeClass('selected')    
+            $(`${ordem[index]}`).removeClass('selected')    
         }, 1000);
     });
+
+
 }
+
 
 ////checa se clicado é igual à ordem
 function checaJogada() {
@@ -91,15 +99,18 @@ function checaJogada() {
     if (a===b) {
         console.log(`ordem: ${ordem}, clicado: ${clicado}`)
         console.log('ok')
+        qtMaxClicado = ordem.length;
         nextLevel()
     } else {
         console.log('errou')
+        console.log(`ordem: ${ordem}, clicado: ${clicado}`);
     }
 }
 
 //segue o jogo se acertou
 function nextLevel() {
     console.log('chamou next level')
+    qtMaxClicado = ordem.length;
     clicado = [];
 
     setTimeout(() => {
