@@ -1,7 +1,4 @@
-@font-face {
-	font-family: Principal;
-	src:url(../fonts/Orbitron-VariableFont_wght.ttf);
-}
+
 
 :root {
   --verde: #008000;
@@ -32,7 +29,7 @@
 }
 
 body {
-	font-family: Principal;
+
   margin: 0;
   background-color: var(--azulPastel);
 }
@@ -57,7 +54,7 @@ body {
   border: 15px solid #000000;
   height: 150px;
   width: 150px;
-	font-family: Principal;
+
   font-size: 18px;
   position: fixed;
   top: 50%;

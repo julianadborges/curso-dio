@@ -2,6 +2,8 @@ const green = $('.green');
 const red = $('.red');
 const yellow = $('.yellow');
 const blue = $('.blue');
+const $startBtn = $('.startBtn');
+const $score = $('#score');
 
 let order = [];
 let clickedOrder = [];
@@ -13,7 +15,7 @@ let score = 0;
 // let blueSound=document.getElementById("blueBtn");
 
 let playGame = () => {
-  document.getElementById("startBtn").disabled = 1;
+  $startBtn.attr('disabled', true);
   score = 0;
 
   nextLevel();
@@ -27,7 +29,7 @@ let nextLevel = () => {
 
 let shuffleOrder = () => {
   let colorOrder = Math.floor(Math.random() * 4);
-  order[order.length] = colorOrder;
+  order.push(colorOrder)
   clickedOrder = [];
 
   for(let i in order) {
@@ -39,10 +41,10 @@ let shuffleOrder = () => {
 let lightColor = (element, number) => {
   number *= 500;
   setTimeout(() => {
-    element.classList.add('selected');
+    element.addClass('selected');
   }, number - 250);
   setTimeout(() => {
-    element.classList.remove('selected');
+    element.removeClass('selected');
   }, number);
 }
 
@@ -59,11 +61,11 @@ let checkOrder = () => {
 }
 
 let click = (color) => {
-  clickedOrder[clickedOrder.length] = color;
-  createColorElement(color).classList.add('selected');
+  clickedOrder.push(color);
+  createColorElement(color).addClass('selected');
 
   setTimeout(() => {
-    createColorElement(color).classList.remove('selected');
+    createColorElement(color).removeClass('selected');
     checkOrder();
   },250);
 }
@@ -81,7 +83,7 @@ let createColorElement = (color) => {
 }
 
 let scoreboardRefresh = () => {
-  document.getElementById("score").innerHTML = score;
+  $score.html(score);
 }
 
 let gameOver = () => {

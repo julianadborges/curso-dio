@@ -47,7 +47,11 @@ body {
 
 .cor {
     box-shadow: rgba(14, 30, 37, 0.253) 8px 8px 8px 8px, rgba(14, 30, 37, 0.473) 0px 2px 16px 0px;
-    cursor: pointer!important;
+    cursor: pointer;
+}
+
+.dont-click {
+    pointer-events: none;
 }
 
 .active {
@@ -56,8 +60,10 @@ body {
 
 .start {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 50%;
+    left: 51%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
 
 #start {
@@ -70,6 +76,11 @@ body {
 #start:hover {
     background-color: black;
     transition: 0.7s;
+}
+
+#start:disabled {
+    background-color: rgb(175, 207, 207);
+    opacity: 100;
 }
 
 .score {
