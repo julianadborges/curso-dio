@@ -7,6 +7,7 @@ const yellow = $('#yellow');
 
 let ordem = [];
 let clicado = [];
+let qtClicado = 0;
 let cor;
 
 $score = $('#score');

@@ -15,7 +15,7 @@ body {
 .jogo {
     position: relative;
     margin-top: 10vh!important;
-    z-index: 100!important;
+    z-index: 2!important;
 }
 
 #blue {
@@ -70,7 +70,7 @@ body {
     background-color: rgb(175, 207, 207);
     border-radius: 100%;
     border-width: 3px;
-
+    z-index: 1;
 }
 
 #start:hover {
@@ -91,4 +91,14 @@ body {
     background-color: black;
     color: whitesmoke;
     border-radius: 1rem;
+}
+
+.selected {
+    background-color: rgb(225, 224, 224)!important;
+}
+
+.teste {
+    position: absolute;
+    top: 0;
+    right: 0;
 }
