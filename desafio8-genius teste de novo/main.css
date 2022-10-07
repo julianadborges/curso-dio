@@ -84,7 +84,7 @@ body {
 }
 
 .selected {
-    background-color: rgba(160, 157, 157, 0.829) !important;
+    background-color: rgb(189, 185, 185) !important;
 }
 
 .form-switch #dark-mode:checked {
