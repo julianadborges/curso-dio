@@ -20,26 +20,16 @@ $score.html(score);
 function randomCor() {
     cor = Math.floor(Math.random() * 4)
 
-    switch (cor) {
-        case 0:
-            cor = 'blue'
-            break;
-        case 1:
-            cor = 'green'
-            break;
-        case 2:
-            cor = 'red'
-            break;
-        case 3:
-            cor = 'yellow'
-            break;
-    }
+    criaCor(cor)
 
-    ordem.push(cor)
+
+
 
     for(let i in ordem) {
         let elementColor = createColorElement(i);
         destaca(elementColor, Number(i) + 1);
+
+        console.log(`criaCor(${i})`)
       }
 }
 
@@ -55,20 +45,22 @@ $btn.click(() => {
 function nextLevel() {
     $score.html(score)
     randomCor()
-
+    criaCor(cor)
+    ordem.push(cor)
     console.log(`ordem: ${ordem}`)
+    
 
 }
 
-
-let createColorElement = (color) => {
-    if(color == 0) {
+////aqui é o erro de element undefined
+function criaCor(cor) {
+    if(cor == 0) {
       return blue;
-    } else if(color == 1) {
+    } else if(cor == 1) {
         return green;
-    } else if (color == 2) {
+    } else if (cor == 2) {
         return red;
-    } else if (color == 3) {
+    } else if (cor == 3) {
         return yellow;
     }    
 }
@@ -83,7 +75,23 @@ let destaca = (element, number) => {
     }, number);
 }
 
-//destaca a cor sorteada
+//cria cor
+function criaCor(cor) {
+    switch (cor) {
+        case 0:
+            cor = 'blue'
+            break;
+        case 1:
+            cor = 'green'
+            break;
+        case 2:
+            cor = 'red'
+            break;
+        case 3:
+            cor = 'yellow'
+            break;
+    }
+}
 
 
 //pega os btns clicados

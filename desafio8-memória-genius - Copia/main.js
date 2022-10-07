@@ -5,8 +5,8 @@ const blue = $('.blue');
 const $startBtn = $('.startBtn');
 const $score = $('#score');
 
-let order = [];
-let clickedOrder = [];
+let ordem = [];
+let clicado = [];
 let score = 0;
 
 // let greenSound=document.getElementById("greenBtn");
@@ -28,12 +28,12 @@ let nextLevel = () => {
 }
 
 let shuffleOrder = () => {
-  let colorOrder = Math.floor(Math.random() * 4);
-  order.push(colorOrder)
-  clickedOrder = [];
+  let color = Math.floor(Math.random() * 4);
+  ordem.push(color)
+  clicado = [];
 
-  for(let i in order) {
-    let elementColor = createColorElement(order[i]);
+  for(let i in ordem) {
+    let elementColor = createColorElement(ordem[i]);
     lightColor(elementColor, Number(i) + 1);
   }
 }
@@ -49,19 +49,19 @@ let lightColor = (element, number) => {
 }
 
 let checkOrder = () => {
-  for(let i in clickedOrder) {
-    if(clickedOrder[i] != order[i]) {
+  for(let i in clicado) {
+    if(clicado[i] != ordem[i]) {
       gameOver();
       break;
     }
   }
-  if(clickedOrder.length == order.length) {
+  if(clicado.length == ordem.length) {
     nextLevel();
   }
 }
 
 let click = (color) => {
-  clickedOrder.push(color);
+  clicado.push(color);
   createColorElement(color).addClass('selected');
 
   setTimeout(() => {
@@ -87,9 +87,9 @@ let scoreboardRefresh = () => {
 }
 
 let gameOver = () => {
-  document.getElementById("startBtn").disabled = 0;
-  alert(`Você errou, Vamos tentar outra vez!`);
-  order = [];
+  $("#startBtn").attr('disabled', true)
+  alert(`Você errou, Vamos tentar outra vez!`)
+  ordem = [];
   score = 0;
 }
 
