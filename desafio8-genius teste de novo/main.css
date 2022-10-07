@@ -1,6 +1,6 @@
 body {
     font-family: "Lato";
-    background-color: rgb(37, 49, 49);
+    background-color: rgb(175, 207, 207);
 }
 
 .jogo {
@@ -84,7 +84,7 @@ body {
 }
 
 .selected {
-    background-color: rgb(225, 224, 224)!important;
+    background-color: rgba(160, 157, 157, 0.829) !important;
 }
 
 .form-switch #dark-mode:checked {
