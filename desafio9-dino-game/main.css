@@ -1,0 +1,73 @@
+.m1 {
+    border: 2px solid red;
+}
+
+.m2 {
+    border: 2px solid blue;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    font-family: "Fira Sans";
+    font-size: large;
+    background-color: #f9f9f9;
+}
+
+.score {
+    font-size: large;
+    border-radius: 2rem;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+    background-color: #e9e6e6;
+}
+
+#score {
+    font-style: oblique;
+    font-size: larger;
+}
+
+.game {
+    height: 60vh;
+    background-color: #f9f9f9;
+    background-image: url(/media/background.png);
+    background-size: 40%;
+    background-position-y: center;
+    background-position-x: 0px;
+    background-repeat: repeat-x;
+    min-height: 290px;
+    position: relative;
+}
+
+#dino {
+    max-height: 70px;
+    max-width: 90px;
+    position: absolute;
+    bottom: 5vh;
+    right: 85vw;
+}
+
+#cacto {
+    max-height: 80px;
+    max-width: 100px;
+    position: absolute;
+    right: 0vw;
+    bottom: 5vh;
+}
+
+#check-dino {
+    background-color: rgb(8, 8, 180);
+    width: 10px;
+    height: 50px;
+    position: absolute;
+    bottom: 5vh;
+    right: 84.5vw;
+}
+
+#check-cacto {
+    background-color: rgb(8, 8, 180);
+    width: 10px;
+    height: 50px;
+    position: absolute;
+    right: 4vw;
+    bottom: 5vh;
+}
