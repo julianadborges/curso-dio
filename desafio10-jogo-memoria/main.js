@@ -24,31 +24,42 @@ $('.start').click(function vira() {
 })
 
 //clica pra virar
+let limite = false;
 card.click(function teste() {
-    $(this).children().closest('.card-back').addClass('d-none');
-    $(this).children().closest('.card-front').removeClass('d-none');
-    clicado.push($(this).children().closest('.card-front').attr('src'));
-    checaJogada();
+    if(limite === false) {
+        $(this).children().closest('.card-back').addClass('d-none');
+        $(this).children().closest('.card-front').removeClass('d-none');
+        clicado.push($(this).children().closest('.card-front').attr('src'));
+        checaJogada();
+    } else if (limite === true) {
+        return false;
+    }
+    
 })
 
 //checa a cada duas
 function checaJogada() {
     if (clicado.length < 2) {
-        console.log('joga mais um')
+        limite = false;
     } else if (clicado.length == 2) {
+        limite = true;
         if (clicado[0] === clicado[1]) {
-            console.log('acertou')
             //passar a classe 'acertou'
             $(`img[src='${clicado[0]}']`).addClass('acertou')
-            $(`img[src='${clicado[1]}']`).addClass('acertou')
+            $(`img[src='${clicado[0]}']`).siblings().addClass('acertou')
             clicado = []
+            limite = false;
         } else {
             setTimeout(() => {
-                $('.card-front').not('acertou').addClass('d-none');
-                $('.card-back').not('acertou').removeClass('d-none');
+                if ($('.card-front').hasClass('acertou') && !$('.card-back').hasClass('acertou')) {
+                    return false
+                } else if (!$('.card-front').hasClass('acertou') && !$('.card-back').hasClass('acertou')) {
+                    $('.card-front').addClass('d-none');
+                    $('.card-back').removeClass('d-none');
+                }
+                limite = false
             }, 1000);
             clicado = []
-            console.log('errou')
         }
     }
 }
