@@ -3,82 +3,84 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hello, world!</title>
+    <title>Jogo da memória</title>
     <link rel="shortcut icon" href="">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link href="main.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto"/>
-    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Federo"/>
+    <script type="text/javascript" src=" https://cdn.jsdelivr.net/npm/underscore@1.13.6/underscore-umd-min.js "></script>
   </head>
+  
   <body>
     <main>
         <div class="container my-4 mx-auto">
-            <div class="row">
+            <div class="row row-card">
                 <div class="col card">
-                    <img src="/img/box.png" alt="card back" width="100vh" class="mx-auto my-auto card-back">
-                    <img src="" alt="card front" width="100vw" class="mx-auto my-auto d-none card-front" id="0">
+                    <img src="/img/box.png" alt="card back" width="100vh" class="card-back ">
+                    <img src="" alt="card front" width="100vw" class="mx-auto my-auto card-front" id="0">
                 </div>
                 <div class="col mx-3 card">
                     <img src="/img/box.png" alt="card back" width="100vh" class="mx-auto my-auto card-back">
-                    <img src="" alt="card front" width="100vh" class="mx-auto my-auto d-none card-front" id="1">
+                    <img src="" alt="card front" width="100vh" class="mx-auto my-auto card-front" id="1">
                 </div>
                 <div class="col card">
                     <img src="/img/box.png" alt="card back" width="100vh" class="mx-auto my-auto card-back">
-                    <img src="" alt="card front" width="100vh" class="mx-auto my-auto d-none card-front" id="2">
+                    <img src="" alt="card front" width="100vh" class="mx-auto my-aut card-front" id="2">
                 </div>
             </div>
-            <div class="row my-2">
+            <div class="row row-card my-2">
                 <div class="col card">
-                    <img src="/img/box.png" alt="card back" width="100vh" class="mx-auto my-auto card-back">
-                    <img src="" alt="card front" width="100vh" class="mx-auto my-auto d-none card-front" id="3">
+                    <img src="/img/box.png" alt="card back" width="100vh" class="card-back ">
+                    <img src="" alt="card front" width="100vw" class="mx-auto my-auto card-front" id="3">
                 </div>
                 <div class="col mx-3 card">
                     <img src="/img/box.png" alt="card back" width="100vh" class="mx-auto my-auto card-back">
-                    <img src="" alt="card front" width="100vh" class="mx-auto my-auto d-none card-front" id="4">
+                    <img src="" alt="card front" width="100vh" class="mx-auto my-auto card-front" id="4">
                 </div>
                 <div class="col card">
                     <img src="/img/box.png" alt="card back" width="100vh" class="mx-auto my-auto card-back">
-                    <img src="" alt="card front" width="100vh" class="mx-auto my-auto d-none card-front" id="5">
+                    <img src="" alt="card front" width="100vh" class="mx-auto my-auto card-front" id="5">
                 </div>
             </div>
-            <div class="row mb-2">
+            <div class="row row-card mb-2">
                 <div class="col card">
-                    <img src="/img/box.png" alt="card back" width="100vh" class="mx-auto my-auto card-back">
-                    <img src="" alt="card front" width="100vh" class="mx-auto my-auto d-none card-front" id="6">
+                    <img src="/img/box.png" alt="card back" width="100vh" class="card-back ">
+                    <img src="" alt="card front" width="100vw" class="mx-auto my-auto card-front" id="6">
                 </div>
                 <div class="col mx-3 card">
                     <img src="/img/box.png" alt="card back" width="100vh" class="mx-auto my-auto card-back">
-                    <img src="" alt="card front" width="100vh" class="mx-auto my-auto d-none card-front" id="7">
+                    <img src="" alt="card front" width="100vh" class="mx-auto my-auto card-front" id="7">
                 </div>
                 <div class="col card">
                     <img src="/img/box.png" alt="card back" width="100vh" class="mx-auto my-auto card-back">
-                    <img src="" alt="card front" width="100vh" class="mx-auto my-auto d-none card-front" id="8">
+                    <img src="" alt="card front" width="100vh" class="mx-auto my-auto card-front" id="8">
                 </div>
             </div>
-            <div class="row">
+            <div class="row row-card">
                 <div class="col card">
-                    <img src="/img/box.png" alt="card back" width="100vh" class="mx-auto my-auto card-back">
-                    <img src="" alt="card front" width="100vh" class="mx-auto my-auto d-none card-front" id="9">
+                    <img src="/img/box.png" alt="card back" width="100vh" class="card-back ">
+                    <img src="" alt="card front" width="100vw" class="mx-auto my-auto card-front" id="9">
                 </div>
                 <div class="col mx-3 card">
                     <img src="/img/box.png" alt="card back" width="100vh" class="mx-auto my-auto card-back">
-                    <img src="" alt="card front" width="100vh" class="mx-auto my-auto d-none card-front" id="10">
+                    <img src="" alt="card front" width="100vh" class="mx-auto my-auto card-front" id="10">
                 </div>
                 <div class="col card">
                     <img src="/img/box.png" alt="card back" width="100vh" class="mx-auto my-auto card-back">
-                    <img src="" alt="card front" width="100vh" class="mx-auto my-auto d-none card-front" id="11">
+                    <img src="" alt="card front" width="100vh" class="mx-auto my-auto card-front" id="11">
                 </div>
             </div>
         </div>
-
-        <button class="start">Mostra</button>
-
     </main>
 
-    <footer>
-        <h6 class="text-center">Desenvolvido por Juju</h6>
+    <footer class="text-center">
+        <div>
+            <img src="/img/LOGO-g.png" alt="Logo da Juliana" width="40vw" class="me-1">
+            Desenvolvido por Juliana
+        </div>
+        
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>

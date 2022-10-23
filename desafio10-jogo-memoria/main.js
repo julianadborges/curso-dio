@@ -3,63 +3,50 @@ const frontCard = $('.card-front');
 const cards = ['img/bowser.png', 'img/bowser.png', 'img/luigi.png', 'img/luigi.png', 'img/mario.png', 'img/mario.png', 'img/peach.png', 'img/peach.png', 'img/toad.png', 'img/toad.png', 'img/yoshi.png', 'img/yoshi.png']
 let clicado = [];
 
-//array da ordem aleatória
-let shuffled;
-function randomCards(array) {
-    shuffled = array.sort(() => 0.5 - Math.random());
-} 
-
-//posiciona as cartas aleatórias
 $(function () {
-    randomCards(cards);
+    let shuffled = _.shuffle(cards)
     $.each(shuffled, function (index, value) { 
         $(`[id*='${index}']`).attr('src', value)
     });
 });
 
-//teste mostra tudo //////////////////// apagar
-$('.start').click(function vira() {
-    $('.card-back').addClass('d-none');
-    $('.card-front').removeClass('d-none');
-})
-
-//clica pra virar
 let limite = false;
-card.click(function teste() {
-    if(limite === false) {
-        $(this).children().closest('.card-back').addClass('d-none');
-        $(this).children().closest('.card-front').removeClass('d-none');
+card.click(function clica() {
+    if(!limite && !$(this).hasClass('acertou')) {
         clicado.push($(this).children().closest('.card-front').attr('src'));
+        $(this).addClass('active');
         checaJogada();
-    } else if (limite === true) {
+    } else if (limite) {
         return false;
     }
-    
 })
 
-//checa a cada duas
 function checaJogada() {
     if (clicado.length < 2) {
         limite = false;
     } else if (clicado.length == 2) {
         limite = true;
         if (clicado[0] === clicado[1]) {
-            //passar a classe 'acertou'
-            $(`img[src='${clicado[0]}']`).addClass('acertou')
-            $(`img[src='${clicado[0]}']`).siblings().addClass('acertou')
+            $(`img[src='${clicado[0]}']`).parent().addClass('acertou')
             clicado = []
-            limite = false;
+            setTimeout(() => {
+                limite = false;
+            }, 1100);
         } else {
             setTimeout(() => {
-                if ($('.card-front').hasClass('acertou') && !$('.card-back').hasClass('acertou')) {
-                    return false
-                } else if (!$('.card-front').hasClass('acertou') && !$('.card-back').hasClass('acertou')) {
-                    $('.card-front').addClass('d-none');
-                    $('.card-back').removeClass('d-none');
-                }
-                limite = false
-            }, 1000);
+                card.not('.acertou').removeClass('active')
+            }, 1100);
             clicado = []
+            setTimeout(() => {
+                limite = false;
+            }, 1100);
         }
+    }
+    if( card.length === $('.acertou').length) {
+        setTimeout(() => {
+            if(confirm('Parabéns! Você ganhou!!!\nClique em OK para jogar de novo.')) {
+                location.reload()
+            }
+        }, 200);
     }
 }
