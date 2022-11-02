@@ -1,132 +1,143 @@
-const $score = $('#score');
-const $start = $('#start');
-const $cacto = $('#cacto');
-const $dino = $('#dino');
-
-let jogando = false;
-let score = 0;
-let velox = 1;
+//SCORE
+const score = $('#score');
+let scorePoints = 0;
 
 $(function () {
-    if (window.confirm('Bora começar?')) {
-        jogando = true;
-        atualizaScore();
-        moveBackground();
-        moveCacto();
-    } else {
-        alert('Vou começar do mesmo jeito ;)')
-        jogando = true;
-        atualizaScore();
-        moveBackground();
-        moveCacto();
+    score.html(scorePoints)
+    getTime()
+    velocidade()
+});
+
+function refreshScore() {
+    score.html(scorePoints)
+};
+
+let jogando = true;
+
+function getTime() {
+        setInterval(() => {
+            if (jogando === true) {
+            scorePoints += 10
+            refreshScore()
+            }
+        }, 300);
+}
+
+//VELOCIDADE (background e jogo talvez)
+let velox = 1;
+
+function velocidade() { ///////////////////////chamei no ready
+   setTimeout(() => {
+        velox *= 2;
+   }, 3000);
+}
+
+//BACKGROUND
+let background = $('.game').css('background-position-x').slice(0, -2);
+
+$(function moveBackground() {
+        let bgInterval = setInterval(() => {
+            if (jogando === true) {
+                background--
+                $('.game').css('background-position-x', `${background}px`)
+            } else {
+                clearInterval(bgInterval);
+            }
+        }, velox);
+});
+
+//PULA
+const dino = $('#dino');
+let isJumping = false;
+
+$(window).keypress(function jump(e) { 
+    if ( e.key === ' ' && isJumping === false) {
+        isJumping = true;
+        let bottom = parseInt(dino.css('bottom').slice(0, -2));
+        
+        let upInterval = setInterval(() => {
+            if (bottom < 180) {
+                bottom += 6
+                dino.css('bottom', `${bottom}px`)
+                $('#check-dino').css('bottom', `${bottom}px`) //////////////////////////////////////////
+            } else if (bottom >= 180) {
+                let downInterval = setInterval(() => {
+                    if (bottom > 2) {
+                        bottom -= 6 
+                        dino.css('bottom', `${bottom}px`)
+                        $('#check-dino').css('bottom', `${bottom}px`)
+                    } else {
+                        isJumping = false;
+                        clearInterval(downInterval)
+                    }
+                });
+                clearInterval(upInterval)
+            }
+        });
     }
 });
 
-function atualizaScore() {
-    $score.html(score);
-}
+//CRIA CACTO
+const cactoPlace = $('#cacto-place');
+let cacto = $('.cactus');
 
-function moveBackground() {
-    let backgroundXFull = $('html').css('background-position-x');
-    let backgroundSlice = parseInt(backgroundXFull.slice(0,1))
-    setInterval(() => {
-        backgroundSlice -= 2;
-        $('.game').css('background-position-x', `${backgroundSlice}px`);
-    }, velox);
-}
+$(function createCacto() {
+    if (jogando === true) {
+        let random;
+        randomNumber(600, 6000);
 
-function moveCacto() {
-    let maxRight = 100;
-    let minRight = 0;
-    let cactoRightVH;
-
-    let cactoRight = $cacto.css('right');
-    let cactoRightPx = parseInt(cactoRight.slice(0, 2));
-    
-    function convertCactoPx(positionW, width) {
-        cactoRightVH = positionW * 100/width
-    }
-
-    let divWidthPx = $('.game').width();
-    convertCactoPx(cactoRightPx, divWidthPx)
-
-    let rightInterval = setInterval(() => {
-        if (cactoRightVH >= maxRight) {
-            cactoRightVH = minRight;
-        } else if (cactoRightVH < maxRight) {
-            cactoRightVH += 0.5
-            $cacto.css('right', `${cactoRightVH}vw`)
-            checaMovimento(); ///////////////////////////preencher parametros (dinoBottom, dinoRight, cactoRight)
+        function randomNumber(min, max) {
+            random = Math.floor(Math.random()*(max-min+1)+min);;
         }
-    }, velox);
-}
 
-//pula
-$('html').keydown(function (e) { 
-    if( e.key === ' ' && jogando && !isJumping) {
-        jump()
-    } else {
-        return false;
-    }})
+        setTimeout(() => {
+            if (jogando === true) {
+                randomNumber()
+                cactoPlace.append('<img src="/media/cactus.png" class="cactus"><div class="check" id="check-cacto-x"></div>')
+                moveCacto();
+            }
+        }, random);
 
-//jump
-let isJumping = false;
-
-function jump() {
-    isJumping = true;
-    let maxHeight = 40;
-    let minHeight = 5;
-    let positionDinoVH;
-
-    let dinoHeight = $dino.css('bottom');
-    let dinoHeightPx = parseInt((dinoHeight.slice(0, 2)-10))
+        function moveCacto() {
+            if(jogando === true) {
+                $('#cacto-place > .cactus, #cacto-place > .check').each(function () {
+                    let right = parseInt($(this).css('right').slice(0, -2));
     
-    let divHeightPx = $('.game').height();
-    convertDinoPx(dinoHeightPx, divHeightPx);
+                    let interval = setInterval(() => {
+                        let valor = 0;
+                        setTimeout(() => {
+                            valor += 2
+                        }, 3000);
 
-    function convertDinoPx(positionH, height) {
-        positionDinoVH = parseInt(positionH * 100/height)
-    }
-
-    let upInterval = setInterval(() => {
-        if (positionDinoVH >= maxHeight) {
-            let downInterval = setInterval(() => {
-                if (positionDinoVH >= minHeight) {
-                    positionDinoVH -= 1.7;
-                    $dino.css('bottom', `${positionDinoVH}vh`)
-                } else if (positionDinoVH < minHeight) {
-                    isJumping = false;
-                    clearInterval(downInterval)
-                }
-            });
-            clearInterval(upInterval);
-
-        } else if (positionDinoVH < maxHeight) {
-            positionDinoVH += 1.7;
-            $dino.css('bottom', `${positionDinoVH}vh`)
-        } 
-    });
-}
-
-function checaMovimento() {
-    let dinoWidth = $dino.css('right');
-    let dinoHeight = $dino.css('bottom');
-    let cactoHeight = $cacto.css('bottom')
-
-    let checaInterval = setInterval(() => {
-        let cactoPos = $cacto.css('right');
-        
-        if (dinoWidth === cactoPos && dinoHeight === cactoHeight) {
-            console.log('perdeu')
-            clearInterval(checaInterval)
+                        if (right < 900 && jogando) {
+                            right += valor + 4;
+                            $(this).css('right', `${right}px`)
+                            checkColision()
+                        } else if (jogando) {
+                            $(this).remove()
+                        } 
+                    });
+                })
         }
-    }, 1000);
+        setTimeout(createCacto, random);
+}}
 
-    // setInterval(() => {
-    //     if (dinoBottom === 5 && dinoRight === cactoRight) {
-    //         console.log('perdeu')
-    //     } else {
-    //         console.log('segue')
-    //     }
-    // });
+//COLISÃO / GAME OVER
+function checkColision() {
+    let dinoCheck = $('#check-dino').offset();
+    let cactoCheck = $('#check-cacto-x').offset();
+    let dinoPositionX = dinoCheck.left;
+    let cactoPositionX = cactoCheck.left;
+    let dinoPositionY = dinoCheck.top;
+    let cactoPositionY = cactoCheck.top;
+
+    if (cactoPositionX <= dinoPositionX && cactoPositionY <= dinoPositionY) {
+        jogando = false;
+        gameOver();
+    }
+}})
+
+function gameOver() {
+    alert(`Game over! Seu score: ${scorePoints}`)
+    location.reload()
 }

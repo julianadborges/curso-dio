@@ -9,29 +9,27 @@
     <link href="main.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://code.cdn.mozilla.net/fonts/fira.css"/>
 </head>
 
 <body>
     <header>
         <div class="container my-5">
             <div class="row justify-content-center">
-                <div class="col-4 text-center score">
-                    Score: <span id="score"></span>
+                <div class="col-4 score">
+                    <p class="text-center mt-1">Score: <span id="score"></span></p>
                 </div>
             </div>
         </div>
     </header>
 
     <main>
-        <div class="container-fluid d-flex game align-items-end">
-            <div class="">
-                <img src="/media/dino.png" class="col ms-5" id="dino">
-                <div class="check" id="check-dino"></div>
+        <div class="container d-flex game align-items-end m1">
+            <div class="dino">
+                <img src="/media/dino.png" id="dino">
+                <div class="check" id="check-dino"></div> <!-- ver se dá pra tirar -->
             </div>
-            <div>
-                <img src="/media/cactus.png" class="col" id="cacto">
-                <div class="check" id="check-cacto"></div>
+            <div id="cacto-place">
+                
             </div>
         </div>
     </main>

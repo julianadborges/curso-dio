@@ -6,68 +6,50 @@
     border: 2px solid blue;
 }
 
-body {
-    width: 100%;
-    height: 100%;
-    font-family: "Fira Sans";
-    font-size: large;
-    background-color: #f9f9f9;
-}
-
 .score {
-    font-size: large;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     border-radius: 2rem;
-    box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
-    background-color: #e9e6e6;
-}
-
-#score {
-    font-style: oblique;
-    font-size: larger;
+    height: 40px;
 }
 
 .game {
-    height: 60vh;
-    background-color: #f9f9f9;
-    background-image: url(/media/background.png);
-    background-size: 40%;
-    background-position-y: center;
-    background-position-x: 0px;
-    background-repeat: repeat-x;
-    min-height: 290px;
     position: relative;
+    width: 1000px;
+    height: 400px;
+    box-shadow: rgb(85, 91, 255) 0px 0px 0px 3px, rgb(31, 193, 27) 0px 0px 0px 6px, rgb(255, 217, 19) 0px 0px 0px 9px, rgb(255, 156, 85) 0px 0px 0px 12px, rgb(255, 85, 85) 0px 0px 0px 15px;
+    background-color: #FAFAFA;
+    background-image: url(/media/background.png);
+    background-repeat: repeat-x;
+    background-position-y: bottom;
+    background-position-x: 0px;
 }
 
 #dino {
-    max-height: 70px;
-    max-width: 90px;
     position: absolute;
-    bottom: 5vh;
-    right: 85vw;
+    bottom: 2px;
+    left: 100px;
 }
 
-#cacto {
-    max-height: 80px;
-    max-width: 100px;
+.cactus {
     position: absolute;
-    right: 0vw;
-    bottom: 5vh;
+    bottom: 2px;
+    right: 0px;
 }
 
 #check-dino {
-    background-color: rgb(8, 8, 180);
+    background-color: transparent;
+    height: 60px;
     width: 10px;
-    height: 50px;
     position: absolute;
-    bottom: 5vh;
-    right: 84.5vw;
+    bottom: 2px;
+    left: 190px;
 }
 
-#check-cacto {
-    background-color: rgb(8, 8, 180);
+#check-cacto-x {
+    background-color: transparent;
+    height: 60px;
     width: 10px;
-    height: 50px;
     position: absolute;
-    right: 4vw;
-    bottom: 5vh;
+    bottom: 2px;
+    right: 20px;
 }
