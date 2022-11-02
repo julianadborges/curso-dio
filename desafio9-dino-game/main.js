@@ -84,7 +84,7 @@ let cacto = $('.cactus');
 $(function createCacto() {
     if (jogando === true) {
         let random;
-        randomNumber(600, 6000);
+        randomNumber(600, 5000);
 
         function randomNumber(min, max) {
             random = Math.floor(Math.random()*(max-min+1)+min);;
@@ -106,7 +106,7 @@ $(function createCacto() {
                     let interval = setInterval(() => {
                         let valor = 0;
                         setTimeout(() => {
-                            valor += 2
+                            valor += 1
                         }, 3000);
 
                         if (right < 900 && jogando) {
