@@ -1,58 +1,33 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Jogo de resgate</title>
-    <!-- Bootstrap CSS -->
-    <link href="bootstrap.css" rel="stylesheet">
-    <!-- CSS -->
-    <link href="main.css" rel="stylesheet">
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-    <!-- JQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <!-- Google Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Space+Mono"/>
-    
+<head>
+    <meta charset="UTF-8">
+    <title>Game de Resgate</title>
+    <link href="main.css" rel="stylesheet" type="text/css">
 </head>
-
 <body>
- 
-<div class="container d-flex inicio py-5 mt-5 text-center justify-content-center">
-    <div class="row px-5 py-5 box-inicio w-50 align-content-center">
-        <div class="col">
-            <h1 class="pb-5">Resgate</h1>
-            <p>Utilize <span class="fw-bolder">W e S</span> para mover, <span class="fw-bolder">Espaço</span> para atirar</p>
-            <a href="#" id="link-inicio">Clique aqui para começar</a>
+    <div id="container">
+        <div id="fundoGame">
+            <div id="inicio" onclick="start()">
+                <h1> Resgate </h1>
+                <p>Utilize a tecla ↑ para movimentar o helicóptero para cima, a tecla ↓ para movimentar o helicóptero para baixo e a tecla D para atirar.</p>
+                <p> Clique aqui para iniciar!! </p>
+            </div>
         </div>
     </div>
-</div>
 
-<div class="heli">
-  <div class="check-colisao check-colisao-left"></div>
-</div>
+    <!-- Sons do jogo ! -->
+    <audio src="sons/som.mp3" preload="auto" id="somDisparo"></audio>
+    <audio src="sons/explosao.mp3" preload="auto" id="somExplosao"></audio>
+    <audio src="sons/musica_fundo.mp3" preload="auto" id="musica"></audio>
+    <audio src="sons/gameover.mp3" preload="auto" id="somGameover"></audio>
+    <audio src="sons/perdido.mp3" preload="auto" id="somPerdido"></audio>	
+    <audio src="sons/resgate.mp3" preload="auto" id="somResgate"></audio>
 
-<div class="foe1">
-  <div class="check-colisao check-colisao-right"></div>
-</div>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="main.js"></script>
+</body>
+<footer>
 
-<div class="caminhao">
-  <div class="check-colisao check-colisao-right" id="colisao-caminhao"></div>
-</div>
-
-<div class="amigo">
-  <div class="check-colisao check-colisao-left" id="colisao-amigo"></div>
-</div>
-
-<div class="tiro">
-  <div class="check-colisao check-colisao-left"></div>
-</div>
-
-
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="bootstrap.bundle.js"></script>
-    <!-- Javascript -->
-    <script src="main.js" async defer></script>
-  </body>
+</footer>
 </html>
